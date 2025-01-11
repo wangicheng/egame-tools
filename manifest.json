@@ -44,6 +44,11 @@
         "js": ["js/save_blocks.js", "js/show_solution_button.js"],
         "run_at": "document_start",
         "world": "MAIN"
+      },
+      {
+        "matches": ["https://*.egame.kh.edu.tw/auth/dotCodeIsland?Duck"],
+        "js": ["js/hide_all_pass.js"],
+        "run_at": "document_idle"
       }
     ],
     "icons": {
