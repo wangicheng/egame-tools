@@ -47,7 +47,7 @@
       },
       {
         "matches": ["https://*.egame.kh.edu.tw/auth/dotCodeIsland?Duck"],
-        "js": ["js/hide_all_pass.js"],
+        "js": ["js/hide_all_pass.js", "js/keep_current_page.js"],
         "run_at": "document_idle"
       }
     ],
