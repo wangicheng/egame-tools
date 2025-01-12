@@ -5,7 +5,8 @@
     "version": "1.0",
     "permissions": [
       "activeTab",
-      "storage"
+      "storage",
+      "clipboardRead"
     ],
     "content_scripts": [
       {
@@ -30,7 +31,7 @@
       {
         "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/", "https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"],
         "include_globs": ["*play", "*edit"],
-        "js": ["js/remove_duck_statue.js", "js/turtle_speedup.js"],
+        "js": ["js/remove_duck_statue.js", "js/turtle_speedup.js", "js/copy_paste_blocks_xml.js"],
         "run_at": "document_start",
         "world": "MAIN"
       },
