@@ -9,7 +9,6 @@
       const parent = playButton.parentElement;
       const cloneButton = playButton.cloneNode(true);
       cloneButton.id = 'clone-play-button';
-      cloneButton.style.top = parseInt(cloneButton.style.top) + 90 + 'px';
       cloneButton.querySelector('p').textContent = '免費闖關';
       cloneButton.addEventListener('click', () => {
         const dojoId = location.hash.split('/').at(-1);
@@ -17,6 +16,7 @@
         location.href = '/auth/dotCode/apps/dojo/#play';
       });
       parent.appendChild(cloneButton);
+      playButton.style.display = 'none';
     }
   });
   observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
