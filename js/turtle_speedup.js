@@ -1,12 +1,12 @@
-var WITH_ANIMATE = true;
+let WITH_ANIMATE = true;
 {
   const interval = setInterval(() => {
     if(!window.Turtle || !Turtle.animate) {
       return;
     }
     clearInterval(interval);
-    const with_animate = Turtle.animate;
-    const without_animate = function () {
+    const withAnimate = Turtle.animate;
+    const withoutAnimate = function () {
       // All tasks should be complete now.  Clean up the PID list.
       Turtle.pid = 0;
       BlocklyApps.log.forEach(tuple => {
@@ -31,9 +31,9 @@ var WITH_ANIMATE = true;
     }
     Turtle.animate = function() {
       if (WITH_ANIMATE) {
-        with_animate();
+        withAnimate();
       } else {
-        without_animate();
+        withoutAnimate();
       }
     }
   }, 200);

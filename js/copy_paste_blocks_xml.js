@@ -4,12 +4,12 @@
       return;
     }
     clearInterval(interval1);
-    const copy_function = Blockly.copy_;
+    const copyFunction = Blockly.copy_;
     Blockly.copy_ = function(a) {
       // console.log(a);
       const text = new XMLSerializer().serializeToString(Blockly.Xml.blockToDom(a));
       navigator.clipboard.writeText(text);
-      return copy_function(a);
+      return copyFunction(a);
     };
   }, 200);
 
@@ -18,12 +18,12 @@
       return;
     }
     clearInterval(interval2);
-    const paste_function = Blockly.clipboardSource_.paste;
+    const pasteFunction = Blockly.clipboardSource_.paste;
     Blockly.clipboardSource_.paste = function(a) {
       navigator.clipboard.readText().then((text) => {
         const xml = Blockly.Xml.textToDom(`<xml>${text}</xml>`);
         // console.log(xml.querySelector('block'));
-        return paste_function.call(Blockly.clipboardSource_, xml.querySelector('block'));
+        return pasteFunction.call(Blockly.clipboardSource_, xml.querySelector('block'));
       });
     };
   }, 200);
