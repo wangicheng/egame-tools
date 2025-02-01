@@ -42,7 +42,7 @@
       },
       {
         "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"],
-        "js": ["js/save_blocks.js", "js/show_solution_button.js"],
+        "js": ["js/show_solution_button.js"],
         "run_at": "document_start",
         "world": "MAIN"
       },
