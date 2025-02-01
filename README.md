@@ -69,7 +69,7 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 ![image](https://github.com/user-attachments/assets/6627757e-3057-49a6-a60c-5f775371ddef)
 
 > [!TIP]
-> 你同樣可以原來的方式將紅點隱藏。
+> 您同樣可以原來的方式將紅點隱藏。
 
 ### show_maker_blocks_dojo.js
 
