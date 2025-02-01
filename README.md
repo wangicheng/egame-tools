@@ -8,6 +8,7 @@ Egame Tools 是一個 Chrome Extension，提供多種功能來提升您的遊戲
 - [功能](#功能)
   - [copy_paste_blocks_xml.js](#copy_paste_blocks_xmljs)
   - [edit_dojo_after_designed.js](#edit_dojo_after_designedjs)
+  - [fast_register.js](#fast_registerjs)
   - [free_dojo.js](#free_dojojs)
   - [hide_all_pass.js](#hide_all_passjs)
   - [keep_current_page.js](#keep_current_pagejs)
@@ -43,6 +44,15 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 允許編輯已上架的武館。
 
 ![image](https://github.com/user-attachments/assets/53a18b34-7017-463d-9c9b-f4dfeab45b19)
+
+### fast_register.js
+
+註冊新帳號時，點擊按鈕以自動填入隨機的帳號密碼及其他必要資訊，達到瞬間註冊的效果。
+
+![image](https://github.com/user-attachments/assets/9b138de1-ab09-42ac-ae08-3fe5d75a8b35)
+
+> [!NOTE]
+> 此功能註冊的帳號為「民眾」身分。
 
 ### free_dojo.js
 
