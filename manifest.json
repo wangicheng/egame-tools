@@ -50,6 +50,12 @@
         "matches": ["https://*.egame.kh.edu.tw/auth/dotCodeIsland?Duck"],
         "js": ["js/hide_all_pass.js", "js/keep_current_page.js"],
         "run_at": "document_idle"
+      },
+      {
+        "matches": ["https://www.egame.kh.edu.tw/register*"],
+        "js": ["js/fast_register.js"],
+        "run_at": "document_idle",
+        "world": "MAIN"
       }
     ],
     "icons": {
