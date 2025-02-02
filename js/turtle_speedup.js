@@ -1,10 +1,40 @@
 let WITH_ANIMATE = true;
 {
   const interval = setInterval(() => {
-    if(!window.Turtle || !Turtle.animate) {
+    if (!window.Turtle || !Turtle.animate || !Turtle.execute) {
       return;
     }
     clearInterval(interval);
+
+    Turtle.execute = function () {
+      BlocklyApps.log = [];
+      BlocklyApps.ticks = 1000000;
+
+      Turtle.code = Blockly.JavaScript.workspaceToCode(Turtle.workspace);
+
+      try {
+        eval(Turtle.code);
+      } catch (e) {
+        // Null is thrown for infinite loop.
+        // Otherwise, abnormal termination is a user error.
+        if (e !== Infinity) {
+          alert(e);
+        }
+        // When there is an Infinity error, it cannot be executed without animation.
+        if (e === Infinity && !WITH_ANIMATE) {
+          const result = window.confirm(`程式陷入無限循環，確定要執行？\n（執行 ${BlocklyApps.log.length} 個積木）`);
+          if (!result) {
+            BlocklyApps.log = [];
+            WITH_ANIMATE = true;
+          }
+        }
+      }
+
+      // BlocklyApps.log now contains a transcript of all the user's actions.
+      // Reset the graphic and animate the transcript.
+      Turtle.reset();
+      Turtle.pid = window.setTimeout(Turtle.animate, 100);
+    };
     const withAnimate = Turtle.animate;
     const withoutAnimate = function () {
       // All tasks should be complete now.  Clean up the PID list.
@@ -29,7 +59,7 @@ let WITH_ANIMATE = true;
         Turtle.checkAnswer();
       }
     }
-    Turtle.animate = function() {
+    Turtle.animate = function () {
       if (WITH_ANIMATE) {
         withAnimate();
       } else {
@@ -40,7 +70,7 @@ let WITH_ANIMATE = true;
 
   const observer = new MutationObserver(function (mutationList, observer) {
     const runButton = document.querySelector("#runButton");
-    if(!runButton) {
+    if (!runButton) {
       return;
     }
     observer.disconnect();
