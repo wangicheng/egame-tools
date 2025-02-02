@@ -32,6 +32,7 @@
         "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/", "https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"],
         "include_globs": ["*play", "*edit"],
         "js": ["js/remove_duck_statue.js", "js/turtle_speedup.js", "js/copy_paste_blocks_xml.js"],
+        "css": ["css/dotcode_gaming.css"],
         "run_at": "document_start",
         "world": "MAIN"
       },
