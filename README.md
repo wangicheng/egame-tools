@@ -7,6 +7,7 @@ Egame Tools 是一個 Chrome Extension，提供多種功能來提升您的遊戲
 - [介紹](#介紹)
 - [功能](#功能)
   - [copy_paste_blocks_xml.js](#copy_paste_blocks_xmljs)
+  - [dojo_canvas_background.js](#dojo_canvas_backgroundjs)
   - [edit_dojo_after_designed.js](#edit_dojo_after_designedjs)
   - [fast_register.js](#fast_registerjs)
   - [free_dojo.js](#free_dojojs)
@@ -38,6 +39,18 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 - 貼上：點擊螢幕右上方具有貼上圖示的按鈕，可將剪貼簿中的積木添加到工作區塊內（如果有）。
 
 ![image](https://github.com/user-attachments/assets/d06aec1d-0966-4294-b88d-9b0e496c44bd)
+
+### dojo_canvas_background.js
+
+在武館中加入純色背景及黑色邊框，讓畫布更乾淨，其大小更能被辨識。
+
+| Before | After  |
+| :----- | :----- |
+| ![Before Image](https://github.com/user-attachments/assets/720e76e6-a3d8-45bd-8be3-703a3e9dd387) | ![After Image](https://github.com/user-attachments/assets/d0ad5f50-3ed2-4900-ade9-ca3d9af01f74) |
+
+背景可以透過按鈕切換。
+
+![image](https://github.com/user-attachments/assets/56c24853-141c-4eff-ad1f-62e30f95b19f)
 
 ### edit_dojo_after_designed.js
 
