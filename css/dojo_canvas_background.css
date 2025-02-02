@@ -1,0 +1,22 @@
+div#visualization {
+    position: relative;
+}
+
+div#canvasBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background-color: #e5c18e;
+    z-index: -99999;
+    outline: 1px solid black;
+}
+
+img#workspaceBackgroundGrassland {
+    z-index: -100000;
+}
+
+button#changeCanvasBackgroundButton {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24' fill='none' stroke='%236e2229' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='icon icon-tabler icons-tabler-outline icon-tabler-texture'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M6 3l-3 3' /%3E%3Cpath d='M21 18l-3 3' /%3E%3Cpath d='M11 3l-8 8' /%3E%3Cpath d='M16 3l-13 13' /%3E%3Cpath d='M21 3l-18 18' /%3E%3Cpath d='M21 8l-13 13' /%3E%3Cpath d='M21 13l-8 8' /%3E%3C/svg%3E%0A");
+}

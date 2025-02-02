@@ -1,0 +1,8 @@
+.top-right-button-small {
+	width: 58px;
+	height: 58px;
+	text-indent: -10000px;
+	background: no-repeat -58px 0;
+    background-position: center center;
+	vertical-align: middle;
+}

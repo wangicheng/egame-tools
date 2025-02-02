@@ -56,6 +56,12 @@
         "js": ["js/fast_register.js"],
         "run_at": "document_idle",
         "world": "MAIN"
+      },
+      {
+        "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/"],
+        "include_globs": ["*play", "*edit"],
+        "js": ["js/dojo_canvas_background.js.js"],
+        "css": ["css/dojo_canvas_background.js.css", "css/dotcode_gaming.css"]
       }
     ],
     "icons": {
