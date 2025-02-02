@@ -60,8 +60,8 @@
       {
         "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/"],
         "include_globs": ["*play", "*edit"],
-        "js": ["js/dojo_canvas_background.js.js"],
-        "css": ["css/dojo_canvas_background.js.css", "css/dotcode_gaming.css"]
+        "js": ["js/dojo_canvas_background.js"],
+        "css": ["css/dojo_canvas_background.css", "css/dotcode_gaming.css"]
       }
     ],
     "icons": {
