@@ -20,10 +20,9 @@
       return;
     }
     observer.disconnect();
-    const changeCanvasBackgroundButton = pointerButton.cloneNode(false);
+    const changeCanvasBackgroundButton = document.createElement('button');
     changeCanvasBackgroundButton.id = 'changeCanvasBackgroundButton';
     changeCanvasBackgroundButton.classList.add('top-right-button-small');
-    changeCanvasBackgroundButton.style.backgroundImage = '';
     changeCanvasBackgroundButton.title = '開啟或關閉武館的背景圖。';
 
     changeCanvasBackgroundButton.addEventListener('click', () => changeCanvasBackground());
