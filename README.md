@@ -120,8 +120,10 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 
 ![image](https://github.com/user-attachments/assets/8829e09c-4356-4516-91f2-9d736f40048b)
 
-> [!WARNING]
-> 若您的程式陷入無限循環，使用「加速」會導致網頁崩潰。此問題將在之後的版本進行修正。
+> [!TIP]
+> 若您的程式陷入無限循環，網頁會詢問您是否要執行。
+> 
+> 由於 E-game 最多只會執行數百萬個積木，您的程式通常能夠在數分鐘內執行完畢。
 
 ## 安裝
 
