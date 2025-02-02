@@ -24,6 +24,7 @@
     changeCanvasBackgroundButton.id = 'changeCanvasBackgroundButton';
     changeCanvasBackgroundButton.classList.add('top-right-button-small');
     changeCanvasBackgroundButton.style.backgroundImage = '';
+    changeCanvasBackgroundButton.title = '開啟或關閉武館的背景圖。';
 
     changeCanvasBackgroundButton.addEventListener('click', () => changeCanvasBackground());
     pointerButton.parentElement.appendChild(changeCanvasBackgroundButton);
