@@ -11,7 +11,7 @@ Egame Tools 是一個 Chrome Extension，提供多種功能來提升您的遊戲
   - [edit_dojo_after_designed.js](#edit_dojo_after_designedjs)
   - [fast_register.js](#fast_registerjs)
   - [free_dojo.js](#free_dojojs)
-  - [hide_all_pass.js](#hide_all_passjs)
+  - [hide_all_pass.css](#hide_all_passcss)
   - [keep_current_page.js](#keep_current_pagejs)
   - [remove_duck_statue.js](#remove_duck_statuejs)
   - [show_maker_blocks_dojo.js](#show_maker_blocks_dojojs)
@@ -73,7 +73,7 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 
 ![image](https://github.com/user-attachments/assets/d3d24b43-82dc-430c-a245-63d61e35016c)
 
-### hide_all_pass.js
+### hide_all_pass.css
 
 隱藏令人煩躁的吹牛圖片。
 
