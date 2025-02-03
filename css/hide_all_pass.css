@@ -1,0 +1,7 @@
+div#allPassDiv {
+    display: none !important;
+}
+
+div.allPass {
+    display: none !important;
+}
