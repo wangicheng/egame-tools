@@ -64,6 +64,11 @@
         "include_globs": ["*play", "*edit"],
         "js": ["js/dojo_canvas_background.js"],
         "css": ["css/dojo_canvas_background.css", "css/dotcode_gaming.css"]
+      },
+      {
+        "matches": ["https://*.egame.kh.edu.tw/auth/main/"],
+        "js": ["js/remove_eye_30.js"],
+        "run_at": "document_start"
       }
     ],
     "icons": {
