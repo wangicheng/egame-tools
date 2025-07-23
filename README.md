@@ -14,6 +14,7 @@ Egame Tools 是一個 Chrome Extension，提供多種功能來提升您的遊戲
   - [hide_all_pass.css](#hide_all_passcss)
   - [keep_current_page.js](#keep_current_pagejs)
   - [remove_duck_statue.js](#remove_duck_statuejs)
+  - [remove_eye_30.js](#remove_eye_30js)
   - [show_maker_blocks_dojo.js](#show_maker_blocks_dojojs)
   - [show_pixel_errors.js](#show_pixel_errorsjs)
   - [show_solution_button.js](#show_solution_buttonjs)
@@ -93,6 +94,12 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 
 > [!TIP]
 > 您同樣可以原來的方式將紅點隱藏。
+
+### remove_eye_30.js
+
+隱藏每次進入大廳都會出現的規律用眼提示。
+
+![image](https://github.com/user-attachments/assets/8e203095-6d24-4f6e-8b66-85284cfc8a6c)
 
 ### show_maker_blocks_dojo.js
 
