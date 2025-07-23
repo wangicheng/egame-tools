@@ -67,8 +67,7 @@
       },
       {
         "matches": ["https://*.egame.kh.edu.tw/auth/main/"],
-        "js": ["js/remove_eye_30.js"],
-        "run_at": "document_start"
+        "css": ["css/remove_eye_30.css"]
       }
     ],
     "icons": {
