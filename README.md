@@ -7,6 +7,7 @@ Egame Tools 是一個 Chrome Extension，提供多種功能來提升您的遊戲
 - [介紹](#介紹)
 - [功能](#功能)
   - [copy_paste_blocks_xml.js](#copy_paste_blocks_xmljs)
+  - [custom_hint.js](#custom_hintjs)
   - [dojo_canvas_background.js](#dojo_canvas_backgroundjs)
   - [edit_dojo_after_designed.js](#edit_dojo_after_designedjs)
   - [fast_register.js](#fast_registerjs)
@@ -40,6 +41,23 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 - 貼上：點擊螢幕右上方具有貼上圖示的按鈕，可將剪貼簿中的積木添加到工作區塊內（如果有）。
 
 ![image](https://github.com/user-attachments/assets/d06aec1d-0966-4294-b88d-9b0e496c44bd)
+
+### custom_hint.js
+
+允許自訂個人武館中的提示文字。
+
+- 編輯畫面：
+
+  ![image](https://github.com/user-attachments/assets/242bf59f-abd7-413e-818e-2cee647f1330)
+
+  ![image](https://github.com/user-attachments/assets/01e544a3-9183-4a82-ac3c-86bc391c92f9)
+
+- 遊玩畫面：
+
+  ![image](https://github.com/user-attachments/assets/8b0ed884-ac01-4c6d-84e4-76bdd0957002)
+
+> [!TIP]
+> 將自訂提示留空，即可保留 egame 內部生成的提示。
 
 ### dojo_canvas_background.js
 
