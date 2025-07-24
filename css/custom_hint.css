@@ -1,0 +1,43 @@
+/* 編輯器的容器 */
+#editorContainer.editorContainer-hidden {
+    display: none;
+}
+
+#editorContainer {
+    position: absolute;
+    padding: 20px 20px 20px 20px;
+    background-image: url(images/dialogu_background.png);
+    border: 1px solid #c69059;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px #a25b25;
+    transform-origin: center top;
+    transform: scale(0.929967);
+    width: 50%;
+    left: 25%;
+    top: 100px;
+    z-index: 2;
+
+    /* 新增 Flexbox 屬性 */
+    display: flex; /* 讓其成為 Flex 容器 */
+    justify-content: flex-end; /* 將內容（包括按鈕）靠右對齊 */
+    align-items: center; /* 垂直置中（如果有多行內容） */
+    flex-wrap: wrap; /* 內容過多時換行 */
+    gap: 10px; /* 按鈕之間的間距 */
+}
+
+/* 文字編輯框 */
+#editorTextarea {
+    width: calc(100% - 30px);
+    height: 300px;
+    padding: 15px;
+    font-family: sans-serif;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    resize: vertical;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    display: block;
+    outline: none;
+}

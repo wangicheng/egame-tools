@@ -68,6 +68,13 @@
       {
         "matches": ["https://*.egame.kh.edu.tw/auth/main/"],
         "css": ["css/remove_eye_30.css"]
+      },
+      {
+        "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/"],
+        "include_globs": ["*edit"],
+        "js": ["js/custom_hint.js"],
+        "css": ["css/custom_hint.css"],
+        "world": "MAIN"
       }
     ],
     "icons": {
