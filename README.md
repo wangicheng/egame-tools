@@ -16,7 +16,6 @@ Egame Tools 是一個 Chrome Extension，提供多種功能來提升您的遊戲
   - [keep_current_page.js](#keep_current_pagejs)
   - [remove_duck_statue.js](#remove_duck_statuejs)
   - [remove_eye_30.css](#remove_eye_30css)
-  - [show_maker_blocks_dojo.js](#show_maker_blocks_dojojs)
   - [show_pixel_errors.js](#show_pixel_errorsjs)
   - [show_solution_button.js](#show_solution_buttonjs)
   - [skip_checkin.js](#skip_checkinjs)
@@ -118,12 +117,6 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 隱藏每次進入大廳都會出現的規律用眼提示。
 
 ![image](https://github.com/user-attachments/assets/8e203095-6d24-4f6e-8b66-85284cfc8a6c)
-
-### show_maker_blocks_dojo.js
-
-顯示武館的答案。
-
-![image](https://github.com/user-attachments/assets/c26cff3a-2196-454d-9137-e0abbf127b08)
 
 ### show_pixel_errors.js
 

@@ -15,13 +15,6 @@
         "run_at": "document_start"
       },
       {
-        "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/"],
-        "include_globs": ["*play"],
-        "js": ["js/show_maker_blocks_dojo.js"],
-        "run_at": "document_start",
-        "world": "MAIN"
-      },
-      {
         "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/", "https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"],
         "include_globs": ["*play"],
         "js": ["js/show_pixel_errors.js"],
