@@ -100,7 +100,7 @@
       const makerAnswer = document.querySelector('#makerAnswer');
       console.log(hintText);
       if(hintText) {
-        makerAnswer.value += `\n// custom hint\ncontainerHint.innerHTML = ${JSON.stringify(hintText)};`;
+        makerAnswer.value += `\n// custom hint\ncontainerHint.innerHTML = "";\ncontainerHint.innerText = ${JSON.stringify(hintText)};`;
       }
       submitFunction.apply(this);
     }
