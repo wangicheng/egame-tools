@@ -57,6 +57,15 @@
     toggleButton.addEventListener('click', () => {
       showEditor();
     });
+
+    // --- 從 makerAnswer 中試圖獲取先前自訂的提示內容 ---
+    const regex = /^containerHint\.innerText = "([^"]*)";?$/m;
+    const match = dojoInfo.makerAnswer.match(regex);
+    if (match && match[1]) {
+      hintText = eval(`"${match[1]}"`);
+    } else {
+      hintText = '';
+    }
   }
 
   function showEditor() {
@@ -100,7 +109,7 @@
       const makerAnswer = document.querySelector('#makerAnswer');
       console.log(hintText);
       if(hintText) {
-        makerAnswer.value += `\n// custom hint\ncontainerHint.innerHTML = "";\ncontainerHint.innerText = ${JSON.stringify(hintText)};`;
+        makerAnswer.value += `\n// custom hint\ncontainerHint.innerHTML = "";\ncontainerHint.innerText = ${JSON.stringify(hintText)};\n`;
       }
       submitFunction.apply(this);
     }
