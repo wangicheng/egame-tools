@@ -4,6 +4,11 @@
     navigator.clipboard.writeText(text);
   }
 
+  const copyWorkspaceToClipboard = function() {
+    const text = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace).innerHTML;
+    navigator.clipboard.writeText(text);
+  }
+
   const pasteFromClipboard = function() {
     navigator.clipboard.readText().then((xmlText) => {
       const xmlDom = Blockly.Xml.textToDom(`<xml>${xmlText}</xml>`);
@@ -30,6 +35,14 @@
       return;
     }
     observer.disconnect();
+    const copyButton = document.createElement('button');
+    copyButton.id = 'copyButton';
+    copyButton.classList.add('top-right-button-small');
+    copyButton.title = '複製所有積木至剪貼簿。';
+
+    copyButton.addEventListener('click', () => copyWorkspaceToClipboard());
+    pointerButton.parentElement.appendChild(copyButton);
+    
     const pasteButton = document.createElement('button');
     pasteButton.id = 'pasteButton';
     pasteButton.classList.add('top-right-button-small');
