@@ -37,9 +37,10 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 提供複製和貼上積木的功能。
 
 - 複製：使用右鍵「複製」、「剪下」，或快捷鍵 `Ctrl`+`C`、`Ctrl`+`X` 時，會額外將積木以 xml 格式存於剪貼簿中。
-- 貼上：點擊螢幕右上方具有貼上圖示的按鈕，可將剪貼簿中的積木添加到工作區塊內（如果有）。
+- 全部複製：點擊螢幕右上方具有「複製」圖示的按鈕，可將工作區塊中的積木添加到剪貼簿。
+- 貼上：點擊螢幕右上方具有「貼上」圖示的按鈕，可將剪貼簿中的積木添加到工作區塊內（如果有）。
 
-![image](https://github.com/user-attachments/assets/d06aec1d-0966-4294-b88d-9b0e496c44bd)
+![image](https://github.com/user-attachments/assets/0990766c-98e1-4953-a336-913701bd6b19)
 
 ### custom_hint.js
 
