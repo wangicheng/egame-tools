@@ -1,4 +1,16 @@
 {
+  function encodeBase64(str) {
+    const utf8Encoded = new TextEncoder().encode(str);
+    return btoa(String.fromCharCode.apply(null, utf8Encoded));
+  }
+
+  function decodeBase64(encodedStr) {
+    const decoded = atob(encodedStr);
+    const charCodeArray = decoded.split('').map((char) => char.charCodeAt(0));
+    const utf8Decoded = new Uint8Array(charCodeArray);
+    return new TextDecoder().decode(utf8Decoded);
+  }
+
   let hintText = '';
   let editorContainer;
   let editorTextarea;
@@ -28,7 +40,7 @@
     document.body.appendChild(editorContainer);
 
     // --- 創建切換編輯器顯示的按鈕 ---
-    const menu = document.querySelector("div#menu");
+    const menu = document.querySelector('div#menu');
     toggleButton = document.createElement('button');
     toggleButton.innerText = '編輯提示';
     toggleButton.title = '編輯提示。';
@@ -59,10 +71,10 @@
     });
 
     // --- 從 makerAnswer 中試圖獲取先前自訂的提示內容 ---
-    const regex = /^containerHint\.innerText = "([^"]*)";?$/m;
+    const regex = /}\)\("([^"]*)"\);?/m;
     const match = dojoInfo.makerAnswer.match(regex);
     if (match && match[1]) {
-      hintText = eval(`"${match[1]}"`);
+      hintText = decodeBase64(match[1]);
     } else {
       hintText = '';
     }
@@ -80,13 +92,13 @@
   function hideEditor() {
     const shadow = document.getElementById('dialogShadow');
     shadow.style.opacity = 0;
-    window.setTimeout(() => shadow.style.visibility = 'hidden', 175);
+    window.setTimeout(() => (shadow.style.visibility = 'hidden'), 175);
     editorContainer.classList.add('editorContainer-hidden');
   }
 
   // 在 codeButton 出現後初始化所有元素和事件
   const observer = new MutationObserver(function (mutationList, observer) {
-    const codeButton = document.querySelector("#codeButton");
+    const codeButton = document.querySelector('#codeButton');
     if (!codeButton) {
       return;
     }
@@ -95,24 +107,32 @@
     initializeEditorAndButton();
   });
   observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
-  
+
   // 克隆 saveButton 元素以替換 click 事件為自訂行為
   const observer2 = new MutationObserver(function (mutationList, observer) {
-    const saveForm = document.querySelector("#saveForm");
+    const saveForm = document.querySelector('#saveForm');
     if (!saveForm) {
       return;
     }
     observer2.disconnect();
 
     const submitFunction = saveForm.submit;
-    saveForm.submit = function() {
+    saveForm.submit = function () {
       const makerAnswer = document.querySelector('#makerAnswer');
-      console.log(hintText);
-      if(hintText) {
-        makerAnswer.value += `\n// custom hint\ncontainerHint.innerHTML = "";\ncontainerHint.innerText = ${JSON.stringify(hintText)};\n`;
+      if (hintText) {
+        makerAnswer.value += `
+// custom hint
+containerHint.innerHTML = "";
+containerHint.innerText = ((encodedStr) => {
+  const decoded = atob(encodedStr);
+  const charCodeArray = decoded.split('').map(char => char.charCodeAt(0));
+  const utf8Decoded = new Uint8Array(charCodeArray);
+  return new TextDecoder().decode(utf8Decoded);
+})("${encodeBase64(hintText)}");
+        `;
       }
       submitFunction.apply(this);
-    }
+    };
   });
   observer2.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
 }

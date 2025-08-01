@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "dev": "node esbuild.config.ts",
+    "build": "node esbuild.config.ts production"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.326",
+    "@types/node": "^24.0.4",
+    "esbuild": "^0.25.5",
+    "prettier": "^3.6.1"
+  },
+  "type": "module"
+}
