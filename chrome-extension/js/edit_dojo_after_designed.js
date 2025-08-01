@@ -5,16 +5,15 @@ if you want to view the source, please visit the github repository of this exten
 
 (() => {
   // src/entry-points/edit_dojo_after_designed.ts
-  {
-    const observer = new MutationObserver(function(mutationList, observer2) {
-      if (!location.hash.startsWith("#dojo/myDojo/view/")) {
-        return;
-      }
-      const playButton = document.querySelector('div[data-bind="visible:!myDojo.isOpen(),click:edit"]');
-      if (playButton && playButton.style.display === "none") {
-        playButton.style.display = "block";
-      }
-    });
-    observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
-  }
+  var observer = new MutationObserver(function(mutationList, observer2) {
+    if (!location.hash.startsWith("#dojo/myDojo/view/")) {
+      return;
+    }
+    const playButton = document.querySelector('div[data-bind="visible:!myDojo.isOpen(),click:edit"]');
+    if (playButton && playButton.style.display === "none") {
+      playButton.style.display = "block";
+    }
+  });
+  observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
 })();
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vc3JjL2VudHJ5LXBvaW50cy9lZGl0X2Rvam9fYWZ0ZXJfZGVzaWduZWQudHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IG9ic2VydmVyID0gbmV3IE11dGF0aW9uT2JzZXJ2ZXIoZnVuY3Rpb24gKG11dGF0aW9uTGlzdCwgb2JzZXJ2ZXIpIHtcclxuICBpZiAoIWxvY2F0aW9uLmhhc2guc3RhcnRzV2l0aCgnI2Rvam8vbXlEb2pvL3ZpZXcvJykpIHtcclxuICAgIHJldHVybjtcclxuICB9XHJcbiAgY29uc3QgcGxheUJ1dHRvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3I8SFRNTERpdkVsZW1lbnQ+KCdkaXZbZGF0YS1iaW5kPVwidmlzaWJsZTohbXlEb2pvLmlzT3BlbigpLGNsaWNrOmVkaXRcIl0nKTtcclxuICBpZiAocGxheUJ1dHRvbiAmJiBwbGF5QnV0dG9uLnN0eWxlLmRpc3BsYXkgPT09ICdub25lJykge1xyXG4gICAgcGxheUJ1dHRvbi5zdHlsZS5kaXNwbGF5ID0gJ2Jsb2NrJztcclxuICB9XHJcbn0pO1xyXG5vYnNlcnZlci5vYnNlcnZlKGRvY3VtZW50LmRvY3VtZW50RWxlbWVudCwgeyBhdHRyaWJ1dGVzOiBmYWxzZSwgY2hpbGRMaXN0OiB0cnVlLCBzdWJ0cmVlOiB0cnVlIH0pO1xyXG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7O0FBQUEsTUFBTSxXQUFXLElBQUksaUJBQWlCLFNBQVUsY0FBY0EsV0FBVTtBQUN0RSxRQUFJLENBQUMsU0FBUyxLQUFLLFdBQVcsb0JBQW9CLEdBQUc7QUFDbkQ7QUFBQSxJQUNGO0FBQ0EsVUFBTSxhQUFhLFNBQVMsY0FBOEIsc0RBQXNEO0FBQ2hILFFBQUksY0FBYyxXQUFXLE1BQU0sWUFBWSxRQUFRO0FBQ3JELGlCQUFXLE1BQU0sVUFBVTtBQUFBLElBQzdCO0FBQUEsRUFDRixDQUFDO0FBQ0QsV0FBUyxRQUFRLFNBQVMsaUJBQWlCLEVBQUUsWUFBWSxPQUFPLFdBQVcsTUFBTSxTQUFTLEtBQUssQ0FBQzsiLAogICJuYW1lcyI6IFsib2JzZXJ2ZXIiXQp9Cg==

@@ -1,7 +1,5 @@
-{
-  const checkinHash = '#checkin';
+const checkinHash = '#checkin';
 
-  if(window.location.hash === checkinHash) {
-    window.location.hash = '#islands';
-  }
+if (window.location.hash === checkinHash) {
+  window.location.hash = '#islands';
 }

@@ -5,51 +5,50 @@ if you want to view the source, please visit the github repository of this exten
 
 (() => {
   // src/entry-points/fast_register.ts
-  {
-    let generateRandomString = function() {
-      const uuid = crypto.randomUUID();
-      return uuid.substring(0, 8) + uuid.substring(9, 13) + uuid.substring(14, 17);
-    };
-    const observer = new MutationObserver(function(mutationList, observer2) {
-      if (window.location.hash !== "") {
-        return;
-      }
-      const registerButton = document.querySelector('div:has(> img[alt="註冊"])');
-      if (!registerButton) {
-        return;
-      }
-      if (document.querySelector("#fastRegisterButton")) {
-        return;
-      }
-      const fastRegisterButton = document.createElement("div");
-      fastRegisterButton.id = "fastRegisterButton";
-      fastRegisterButton.style.position = "relative";
-      fastRegisterButton.style.margin = "0 auto";
-      fastRegisterButton.style.width = "24%";
-      fastRegisterButton.style.height = "100%";
-      fastRegisterButton.style.cursor = "pointer";
-      const child_p = registerButton.querySelector("p").cloneNode(true);
-      const child_img = registerButton.querySelector("img").cloneNode(true);
-      child_p.textContent = "瞬間註冊";
-      child_img.setAttribute("alt", "瞬間註冊");
-      fastRegisterButton.appendChild(child_p);
-      fastRegisterButton.appendChild(child_img);
-      fastRegisterButton.addEventListener("click", (event) => {
-        const username = generateRandomString();
-        const password = generateRandomString();
-        const name = "guest-" + generateRandomString().substring(6);
-        document.querySelector("#username").value = username;
-        document.querySelector("#password").value = password;
-        document.querySelector("#passConfirm").value = password;
-        document.querySelector("#nick_name").value = name;
-        document.querySelector("#name").value = name;
-        window.register.onInSchoolChange(false);
-        setTimeout(() => {
-          registerButton.click();
-        }, 100);
-      });
-      registerButton.parentElement.appendChild(fastRegisterButton);
-    });
-    observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
+  function generateRandomString() {
+    const uuid = crypto.randomUUID();
+    return uuid.substring(0, 8) + uuid.substring(9, 13) + uuid.substring(14, 17);
   }
+  var observer = new MutationObserver(function(mutationList, observer2) {
+    if (window.location.hash !== "") {
+      return;
+    }
+    const registerButton = document.querySelector('div:has(> img[alt="註冊"])');
+    if (!registerButton) {
+      return;
+    }
+    if (document.querySelector("#fastRegisterButton")) {
+      return;
+    }
+    const fastRegisterButton = document.createElement("div");
+    fastRegisterButton.id = "fastRegisterButton";
+    fastRegisterButton.style.position = "relative";
+    fastRegisterButton.style.margin = "0 auto";
+    fastRegisterButton.style.width = "24%";
+    fastRegisterButton.style.height = "100%";
+    fastRegisterButton.style.cursor = "pointer";
+    const child_p = registerButton.querySelector("p").cloneNode(true);
+    const child_img = registerButton.querySelector("img").cloneNode(true);
+    child_p.textContent = "瞬間註冊";
+    child_img.setAttribute("alt", "瞬間註冊");
+    fastRegisterButton.appendChild(child_p);
+    fastRegisterButton.appendChild(child_img);
+    fastRegisterButton.addEventListener("click", (event) => {
+      const username = generateRandomString();
+      const password = generateRandomString();
+      const name = "guest-" + generateRandomString().substring(6);
+      document.querySelector("#username").value = username;
+      document.querySelector("#password").value = password;
+      document.querySelector("#passConfirm").value = password;
+      document.querySelector("#nick_name").value = name;
+      document.querySelector("#name").value = name;
+      window.register.onInSchoolChange(false);
+      setTimeout(() => {
+        registerButton.click();
+      }, 100);
+    });
+    registerButton.parentElement.appendChild(fastRegisterButton);
+  });
+  observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
 })();
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vc3JjL2VudHJ5LXBvaW50cy9mYXN0X3JlZ2lzdGVyLnRzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyJmdW5jdGlvbiBnZW5lcmF0ZVJhbmRvbVN0cmluZygpIHtcclxuICBjb25zdCB1dWlkID0gY3J5cHRvLnJhbmRvbVVVSUQoKTtcclxuICByZXR1cm4gdXVpZC5zdWJzdHJpbmcoMCwgOCkgKyB1dWlkLnN1YnN0cmluZyg5LCAxMykgKyB1dWlkLnN1YnN0cmluZygxNCwgMTcpO1xyXG59XHJcblxyXG5jb25zdCBvYnNlcnZlciA9IG5ldyBNdXRhdGlvbk9ic2VydmVyKGZ1bmN0aW9uIChtdXRhdGlvbkxpc3QsIG9ic2VydmVyKSB7XHJcbiAgaWYgKHdpbmRvdy5sb2NhdGlvbi5oYXNoICE9PSAnJykge1xyXG4gICAgcmV0dXJuO1xyXG4gIH1cclxuICBjb25zdCByZWdpc3RlckJ1dHRvbiA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3I8SFRNTERpdkVsZW1lbnQ+KCdkaXY6aGFzKD4gaW1nW2FsdD1cIuiou+WGilwiXSknKTtcclxuICBpZiAoIXJlZ2lzdGVyQnV0dG9uKSB7XHJcbiAgICByZXR1cm47XHJcbiAgfVxyXG4gIGlmIChkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjZmFzdFJlZ2lzdGVyQnV0dG9uJykpIHtcclxuICAgIHJldHVybjtcclxuICB9XHJcbiAgLy8gb2JzZXJ2ZXIuZGlzY29ubmVjdCgpO1xyXG4gIGNvbnN0IGZhc3RSZWdpc3RlckJ1dHRvbiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpO1xyXG4gIGZhc3RSZWdpc3RlckJ1dHRvbi5pZCA9ICdmYXN0UmVnaXN0ZXJCdXR0b24nO1xyXG4gIGZhc3RSZWdpc3RlckJ1dHRvbi5zdHlsZS5wb3NpdGlvbiA9ICdyZWxhdGl2ZSc7XHJcbiAgZmFzdFJlZ2lzdGVyQnV0dG9uLnN0eWxlLm1hcmdpbiA9ICcwIGF1dG8nO1xyXG4gIGZhc3RSZWdpc3RlckJ1dHRvbi5zdHlsZS53aWR0aCA9ICcyNCUnO1xyXG4gIGZhc3RSZWdpc3RlckJ1dHRvbi5zdHlsZS5oZWlnaHQgPSAnMTAwJSc7XHJcbiAgZmFzdFJlZ2lzdGVyQnV0dG9uLnN0eWxlLmN1cnNvciA9ICdwb2ludGVyJztcclxuICBjb25zdCBjaGlsZF9wID0gcmVnaXN0ZXJCdXR0b24ucXVlcnlTZWxlY3RvcigncCcpIS5jbG9uZU5vZGUodHJ1ZSkgYXMgSFRNTFBhcmFncmFwaEVsZW1lbnQ7XHJcbiAgY29uc3QgY2hpbGRfaW1nID0gcmVnaXN0ZXJCdXR0b24ucXVlcnlTZWxlY3RvcignaW1nJykhLmNsb25lTm9kZSh0cnVlKSBhcyBIVE1MSW1hZ2VFbGVtZW50O1xyXG4gIGNoaWxkX3AudGV4dENvbnRlbnQgPSAn556s6ZaT6Ki75YaKJztcclxuICBjaGlsZF9pbWcuc2V0QXR0cmlidXRlKCdhbHQnLCAn556s6ZaT6Ki75YaKJyk7XHJcbiAgZmFzdFJlZ2lzdGVyQnV0dG9uLmFwcGVuZENoaWxkKGNoaWxkX3ApO1xyXG4gIGZhc3RSZWdpc3RlckJ1dHRvbi5hcHBlbmRDaGlsZChjaGlsZF9pbWcpO1xyXG4gIGZhc3RSZWdpc3RlckJ1dHRvbi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIChldmVudCkgPT4ge1xyXG4gICAgLy8gZmFzdCByZXNnaXRlclxyXG4gICAgY29uc3QgdXNlcm5hbWUgPSBnZW5lcmF0ZVJhbmRvbVN0cmluZygpO1xyXG4gICAgY29uc3QgcGFzc3dvcmQgPSBnZW5lcmF0ZVJhbmRvbVN0cmluZygpO1xyXG4gICAgY29uc3QgbmFtZSA9ICdndWVzdC0nICsgZ2VuZXJhdGVSYW5kb21TdHJpbmcoKS5zdWJzdHJpbmcoNik7XHJcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yPEhUTUxJbnB1dEVsZW1lbnQ+KCcjdXNlcm5hbWUnKSEudmFsdWUgPSB1c2VybmFtZTtcclxuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3I8SFRNTElucHV0RWxlbWVudD4oJyNwYXNzd29yZCcpIS52YWx1ZSA9IHBhc3N3b3JkO1xyXG4gICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcjxIVE1MSW5wdXRFbGVtZW50PignI3Bhc3NDb25maXJtJykhLnZhbHVlID0gcGFzc3dvcmQ7XHJcbiAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yPEhUTUxJbnB1dEVsZW1lbnQ+KCcjbmlja19uYW1lJykhLnZhbHVlID0gbmFtZTtcclxuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3I8SFRNTElucHV0RWxlbWVudD4oJyNuYW1lJykhLnZhbHVlID0gbmFtZTtcclxuICAgIHdpbmRvdy5yZWdpc3Rlci5vbkluU2Nob29sQ2hhbmdlKGZhbHNlKTtcclxuICAgIHNldFRpbWVvdXQoKCkgPT4ge1xyXG4gICAgICByZWdpc3RlckJ1dHRvbi5jbGljaygpO1xyXG4gICAgfSwgMTAwKTtcclxuICB9KTtcclxuICByZWdpc3RlckJ1dHRvbi5wYXJlbnRFbGVtZW50IS5hcHBlbmRDaGlsZChmYXN0UmVnaXN0ZXJCdXR0b24pO1xyXG59KTtcclxub2JzZXJ2ZXIub2JzZXJ2ZShkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQsIHsgYXR0cmlidXRlczogZmFsc2UsIGNoaWxkTGlzdDogdHJ1ZSwgc3VidHJlZTogdHJ1ZSB9KTtcclxuIl0sCiAgIm1hcHBpbmdzIjogIjs7Ozs7OztBQUFBLFdBQVMsdUJBQXVCO0FBQzlCLFVBQU0sT0FBTyxPQUFPLFdBQVc7QUFDL0IsV0FBTyxLQUFLLFVBQVUsR0FBRyxDQUFDLElBQUksS0FBSyxVQUFVLEdBQUcsRUFBRSxJQUFJLEtBQUssVUFBVSxJQUFJLEVBQUU7QUFBQSxFQUM3RTtBQUVBLE1BQU0sV0FBVyxJQUFJLGlCQUFpQixTQUFVLGNBQWNBLFdBQVU7QUFDdEUsUUFBSSxPQUFPLFNBQVMsU0FBUyxJQUFJO0FBQy9CO0FBQUEsSUFDRjtBQUNBLFVBQU0saUJBQWlCLFNBQVMsY0FBOEIsMEJBQTBCO0FBQ3hGLFFBQUksQ0FBQyxnQkFBZ0I7QUFDbkI7QUFBQSxJQUNGO0FBQ0EsUUFBSSxTQUFTLGNBQWMscUJBQXFCLEdBQUc7QUFDakQ7QUFBQSxJQUNGO0FBRUEsVUFBTSxxQkFBcUIsU0FBUyxjQUFjLEtBQUs7QUFDdkQsdUJBQW1CLEtBQUs7QUFDeEIsdUJBQW1CLE1BQU0sV0FBVztBQUNwQyx1QkFBbUIsTUFBTSxTQUFTO0FBQ2xDLHVCQUFtQixNQUFNLFFBQVE7QUFDakMsdUJBQW1CLE1BQU0sU0FBUztBQUNsQyx1QkFBbUIsTUFBTSxTQUFTO0FBQ2xDLFVBQU0sVUFBVSxlQUFlLGNBQWMsR0FBRyxFQUFHLFVBQVUsSUFBSTtBQUNqRSxVQUFNLFlBQVksZUFBZSxjQUFjLEtBQUssRUFBRyxVQUFVLElBQUk7QUFDckUsWUFBUSxjQUFjO0FBQ3RCLGNBQVUsYUFBYSxPQUFPLE1BQU07QUFDcEMsdUJBQW1CLFlBQVksT0FBTztBQUN0Qyx1QkFBbUIsWUFBWSxTQUFTO0FBQ3hDLHVCQUFtQixpQkFBaUIsU0FBUyxDQUFDLFVBQVU7QUFFdEQsWUFBTSxXQUFXLHFCQUFxQjtBQUN0QyxZQUFNLFdBQVcscUJBQXFCO0FBQ3RDLFlBQU0sT0FBTyxXQUFXLHFCQUFxQixFQUFFLFVBQVUsQ0FBQztBQUMxRCxlQUFTLGNBQWdDLFdBQVcsRUFBRyxRQUFRO0FBQy9ELGVBQVMsY0FBZ0MsV0FBVyxFQUFHLFFBQVE7QUFDL0QsZUFBUyxjQUFnQyxjQUFjLEVBQUcsUUFBUTtBQUNsRSxlQUFTLGNBQWdDLFlBQVksRUFBRyxRQUFRO0FBQ2hFLGVBQVMsY0FBZ0MsT0FBTyxFQUFHLFFBQVE7QUFDM0QsYUFBTyxTQUFTLGlCQUFpQixLQUFLO0FBQ3RDLGlCQUFXLE1BQU07QUFDZix1QkFBZSxNQUFNO0FBQUEsTUFDdkIsR0FBRyxHQUFHO0FBQUEsSUFDUixDQUFDO0FBQ0QsbUJBQWUsY0FBZSxZQUFZLGtCQUFrQjtBQUFBLEVBQzlELENBQUM7QUFDRCxXQUFTLFFBQVEsU0FBUyxpQkFBaUIsRUFBRSxZQUFZLE9BQU8sV0FBVyxNQUFNLFNBQVMsS0FBSyxDQUFDOyIsCiAgIm5hbWVzIjogWyJvYnNlcnZlciJdCn0K

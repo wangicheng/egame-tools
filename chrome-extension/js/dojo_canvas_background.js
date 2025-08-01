@@ -5,33 +5,32 @@ if you want to view the source, please visit the github repository of this exten
 
 (() => {
   // src/entry-points/dojo_canvas_background.ts
-  {
-    const canvasBackground = document.createElement("div");
-    canvasBackground.id = "canvasBackground";
-    const changeCanvasBackground = function(a) {
-      if (!canvasBackground.parentElement) {
-        const visualization = document.querySelector("#visualization");
-        visualization.insertAdjacentElement("afterbegin", canvasBackground);
-      }
-      if (canvasBackground.style.display === "inline") {
-        canvasBackground.style.display = "none";
-      } else {
-        canvasBackground.style.display = "inline";
-      }
-    };
-    const observer = new MutationObserver(function(mutationList, observer2) {
-      const pointerButton = document.querySelector("#pointerButton");
-      if (!pointerButton) {
-        return;
-      }
-      observer2.disconnect();
-      const changeCanvasBackgroundButton = document.createElement("button");
-      changeCanvasBackgroundButton.id = "changeCanvasBackgroundButton";
-      changeCanvasBackgroundButton.classList.add("top-right-button-small");
-      changeCanvasBackgroundButton.title = "開啟或關閉武館的背景圖。";
-      changeCanvasBackgroundButton.addEventListener("click", () => changeCanvasBackground());
-      pointerButton.parentElement.appendChild(changeCanvasBackgroundButton);
-    });
-    observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
-  }
+  var canvasBackground = document.createElement("div");
+  canvasBackground.id = "canvasBackground";
+  var changeCanvasBackground = function() {
+    if (!canvasBackground.parentElement) {
+      const visualization = document.querySelector("#visualization");
+      visualization.insertAdjacentElement("afterbegin", canvasBackground);
+    }
+    if (canvasBackground.style.display === "inline") {
+      canvasBackground.style.display = "none";
+    } else {
+      canvasBackground.style.display = "inline";
+    }
+  };
+  var observer = new MutationObserver(function(mutationList, observer2) {
+    const pointerButton = document.querySelector("#pointerButton");
+    if (!pointerButton) {
+      return;
+    }
+    observer2.disconnect();
+    const changeCanvasBackgroundButton = document.createElement("button");
+    changeCanvasBackgroundButton.id = "changeCanvasBackgroundButton";
+    changeCanvasBackgroundButton.classList.add("top-right-button-small");
+    changeCanvasBackgroundButton.title = "開啟或關閉武館的背景圖。";
+    changeCanvasBackgroundButton.addEventListener("click", () => changeCanvasBackground());
+    pointerButton.parentElement.appendChild(changeCanvasBackgroundButton);
+  });
+  observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
 })();
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vc3JjL2VudHJ5LXBvaW50cy9kb2pvX2NhbnZhc19iYWNrZ3JvdW5kLnRzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyJjb25zdCBjYW52YXNCYWNrZ3JvdW5kID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7XHJcbmNhbnZhc0JhY2tncm91bmQuaWQgPSAnY2FudmFzQmFja2dyb3VuZCc7XHJcblxyXG5jb25zdCBjaGFuZ2VDYW52YXNCYWNrZ3JvdW5kID0gZnVuY3Rpb24gKCkge1xyXG4gIGlmICghY2FudmFzQmFja2dyb3VuZC5wYXJlbnRFbGVtZW50KSB7XHJcbiAgICBjb25zdCB2aXN1YWxpemF0aW9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcjxIVE1MRGl2RWxlbWVudD4oJyN2aXN1YWxpemF0aW9uJykhO1xyXG4gICAgdmlzdWFsaXphdGlvbi5pbnNlcnRBZGphY2VudEVsZW1lbnQoJ2FmdGVyYmVnaW4nLCBjYW52YXNCYWNrZ3JvdW5kKTtcclxuICB9XHJcbiAgaWYgKGNhbnZhc0JhY2tncm91bmQuc3R5bGUuZGlzcGxheSA9PT0gJ2lubGluZScpIHtcclxuICAgIGNhbnZhc0JhY2tncm91bmQuc3R5bGUuZGlzcGxheSA9ICdub25lJztcclxuICB9IGVsc2Uge1xyXG4gICAgY2FudmFzQmFja2dyb3VuZC5zdHlsZS5kaXNwbGF5ID0gJ2lubGluZSc7XHJcbiAgfVxyXG59O1xyXG5cclxuY29uc3Qgb2JzZXJ2ZXIgPSBuZXcgTXV0YXRpb25PYnNlcnZlcihmdW5jdGlvbiAobXV0YXRpb25MaXN0LCBvYnNlcnZlcikge1xyXG4gIGNvbnN0IHBvaW50ZXJCdXR0b24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yPEhUTUxCdXR0b25FbGVtZW50PignI3BvaW50ZXJCdXR0b24nKTtcclxuICBpZiAoIXBvaW50ZXJCdXR0b24pIHtcclxuICAgIHJldHVybjtcclxuICB9XHJcbiAgb2JzZXJ2ZXIuZGlzY29ubmVjdCgpO1xyXG4gIGNvbnN0IGNoYW5nZUNhbnZhc0JhY2tncm91bmRCdXR0b24gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdidXR0b24nKTtcclxuICBjaGFuZ2VDYW52YXNCYWNrZ3JvdW5kQnV0dG9uLmlkID0gJ2NoYW5nZUNhbnZhc0JhY2tncm91bmRCdXR0b24nO1xyXG4gIGNoYW5nZUNhbnZhc0JhY2tncm91bmRCdXR0b24uY2xhc3NMaXN0LmFkZCgndG9wLXJpZ2h0LWJ1dHRvbi1zbWFsbCcpO1xyXG4gIGNoYW5nZUNhbnZhc0JhY2tncm91bmRCdXR0b24udGl0bGUgPSAn6ZaL5ZWf5oiW6Zec6ZaJ5q2m6aSo55qE6IOM5pmv5ZyW44CCJztcclxuXHJcbiAgY2hhbmdlQ2FudmFzQmFja2dyb3VuZEJ1dHRvbi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsICgpID0+IGNoYW5nZUNhbnZhc0JhY2tncm91bmQoKSk7XHJcbiAgcG9pbnRlckJ1dHRvbi5wYXJlbnRFbGVtZW50IS5hcHBlbmRDaGlsZChjaGFuZ2VDYW52YXNCYWNrZ3JvdW5kQnV0dG9uKTtcclxufSk7XHJcbm9ic2VydmVyLm9ic2VydmUoZG9jdW1lbnQuZG9jdW1lbnRFbGVtZW50LCB7IGF0dHJpYnV0ZXM6IGZhbHNlLCBjaGlsZExpc3Q6IHRydWUsIHN1YnRyZWU6IHRydWUgfSk7XHJcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7QUFBQSxNQUFNLG1CQUFtQixTQUFTLGNBQWMsS0FBSztBQUNyRCxtQkFBaUIsS0FBSztBQUV0QixNQUFNLHlCQUF5QixXQUFZO0FBQ3pDLFFBQUksQ0FBQyxpQkFBaUIsZUFBZTtBQUNuQyxZQUFNLGdCQUFnQixTQUFTLGNBQThCLGdCQUFnQjtBQUM3RSxvQkFBYyxzQkFBc0IsY0FBYyxnQkFBZ0I7QUFBQSxJQUNwRTtBQUNBLFFBQUksaUJBQWlCLE1BQU0sWUFBWSxVQUFVO0FBQy9DLHVCQUFpQixNQUFNLFVBQVU7QUFBQSxJQUNuQyxPQUFPO0FBQ0wsdUJBQWlCLE1BQU0sVUFBVTtBQUFBLElBQ25DO0FBQUEsRUFDRjtBQUVBLE1BQU0sV0FBVyxJQUFJLGlCQUFpQixTQUFVLGNBQWNBLFdBQVU7QUFDdEUsVUFBTSxnQkFBZ0IsU0FBUyxjQUFpQyxnQkFBZ0I7QUFDaEYsUUFBSSxDQUFDLGVBQWU7QUFDbEI7QUFBQSxJQUNGO0FBQ0EsSUFBQUEsVUFBUyxXQUFXO0FBQ3BCLFVBQU0sK0JBQStCLFNBQVMsY0FBYyxRQUFRO0FBQ3BFLGlDQUE2QixLQUFLO0FBQ2xDLGlDQUE2QixVQUFVLElBQUksd0JBQXdCO0FBQ25FLGlDQUE2QixRQUFRO0FBRXJDLGlDQUE2QixpQkFBaUIsU0FBUyxNQUFNLHVCQUF1QixDQUFDO0FBQ3JGLGtCQUFjLGNBQWUsWUFBWSw0QkFBNEI7QUFBQSxFQUN2RSxDQUFDO0FBQ0QsV0FBUyxRQUFRLFNBQVMsaUJBQWlCLEVBQUUsWUFBWSxPQUFPLFdBQVcsTUFBTSxTQUFTLEtBQUssQ0FBQzsiLAogICJuYW1lcyI6IFsib2JzZXJ2ZXIiXQp9Cg==
