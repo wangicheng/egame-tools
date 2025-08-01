@@ -1,4 +1,16 @@
 {
+  function encodeBase64(str) {
+    const utf8Encoded = new TextEncoder().encode(str);
+    return btoa(String.fromCharCode.apply(null, utf8Encoded));
+  }
+  
+  function decodeBase64(encodedStr) {
+    const decoded = atob(encodedStr);
+    const charCodeArray = decoded.split('').map(char => char.charCodeAt(0));
+    const utf8Decoded = new Uint8Array(charCodeArray);
+    return new TextDecoder().decode(utf8Decoded);
+  }
+
   let hintText = '';
   let editorContainer;
   let editorTextarea;
@@ -59,10 +71,10 @@
     });
 
     // --- 從 makerAnswer 中試圖獲取先前自訂的提示內容 ---
-    const regex = /^containerHint\.innerText = "([^"]*)";?$/m;
+    const regex = /}\)\("([^"]*)"\);?/m;
     const match = dojoInfo.makerAnswer.match(regex);
     if (match && match[1]) {
-      hintText = eval(`"${match[1]}"`);
+      hintText = decodeBase64(match[1]);
     } else {
       hintText = '';
     }
@@ -107,9 +119,17 @@
     const submitFunction = saveForm.submit;
     saveForm.submit = function() {
       const makerAnswer = document.querySelector('#makerAnswer');
-      console.log(hintText);
       if(hintText) {
-        makerAnswer.value += `\n// custom hint\ncontainerHint.innerHTML = "";\ncontainerHint.innerText = ${JSON.stringify(hintText)};\n`;
+        makerAnswer.value += `
+// custom hint
+containerHint.innerHTML = "";
+containerHint.innerText = ((encodedStr) => {
+  const decoded = atob(encodedStr);
+  const charCodeArray = decoded.split('').map(char => char.charCodeAt(0));
+  const utf8Decoded = new Uint8Array(charCodeArray);
+  return new TextDecoder().decode(utf8Decoded);
+})("${encodeBase64(hintText)}");
+        `;
       }
       submitFunction.apply(this);
     }
