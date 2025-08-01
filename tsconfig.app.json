@@ -5,9 +5,11 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "types": ["chrome"],
     "moduleResolution": "bundler",
-    "module": "ESNext",
+    "module": "esnext",
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "isolatedModules": true,
+    "moduleDetection": "force"
   },
   "include": ["src"]
 }
