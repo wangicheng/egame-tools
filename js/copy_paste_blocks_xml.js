@@ -1,12 +1,18 @@
 {
+  function removeSpecificIdAttributes(str) {
+    // 這個正規表達式會匹配 id=" 後面跟著正好 20 個非引號字元，然後是引號的部分。
+    // g 旗標表示全域匹配，會找到所有符合的模式，而不是只找到第一個。
+    const regex = /id="[^"]{20}"/g;
+    return str.replace(regex, '');
+  }
   const copyToClipBoard = function(a) {
     const text = new XMLSerializer().serializeToString(Blockly.Xml.blockToDom(a));
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(removeSpecificIdAttributes(text));
   }
 
   const copyWorkspaceToClipboard = function() {
     const text = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace).innerHTML;
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(removeSpecificIdAttributes(text));
   }
 
   const pasteFromClipboard = function() {
