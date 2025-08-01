@@ -119,7 +119,11 @@
     const submitFunction = saveForm.submit;
     saveForm.submit = function () {
       const makerAnswer = document.querySelector('#makerAnswer');
+<<<<<<< HEAD:src/entry-points/custom_hint.ts
       if (hintText) {
+=======
+      if(hintText) {
+>>>>>>> main:js/custom_hint.js
         makerAnswer.value += `
 // custom hint
 containerHint.innerHTML = "";
