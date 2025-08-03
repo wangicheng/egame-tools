@@ -5,11 +5,9 @@ if you want to view the source, please visit the github repository of this exten
 
 (() => {
   // src/entry-points/skip_checkin.ts
-  {
-    const checkinHash = "#checkin";
-    if (window.location.hash === checkinHash) {
-      window.location.hash = "#islands";
-    }
+  var checkinHash = "#checkin";
+  if (window.location.hash === checkinHash) {
+    window.location.hash = "#islands";
   }
 })();
-//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vc3JjL2VudHJ5LXBvaW50cy9za2lwX2NoZWNraW4udHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbIntcclxuICBjb25zdCBjaGVja2luSGFzaCA9ICcjY2hlY2tpbic7XHJcblxyXG4gIGlmKHdpbmRvdy5sb2NhdGlvbi5oYXNoID09PSBjaGVja2luSGFzaCkge1xyXG4gICAgd2luZG93LmxvY2F0aW9uLmhhc2ggPSAnI2lzbGFuZHMnO1xyXG4gIH1cclxufSJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7QUFBQTtBQUNFLFVBQU0sY0FBYztBQUVwQixRQUFHLE9BQU8sU0FBUyxTQUFTLGFBQWE7QUFDdkMsYUFBTyxTQUFTLE9BQU87QUFBQSxJQUN6QjtBQUFBLEVBQ0Y7IiwKICAibmFtZXMiOiBbXQp9Cg==
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vc3JjL2VudHJ5LXBvaW50cy9za2lwX2NoZWNraW4udHMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IGNoZWNraW5IYXNoID0gJyNjaGVja2luJztcblxuaWYgKHdpbmRvdy5sb2NhdGlvbi5oYXNoID09PSBjaGVja2luSGFzaCkge1xuICB3aW5kb3cubG9jYXRpb24uaGFzaCA9ICcjaXNsYW5kcyc7XG59XG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7O0FBQUEsTUFBTSxjQUFjO0FBRXBCLE1BQUksT0FBTyxTQUFTLFNBQVMsYUFBYTtBQUN4QyxXQUFPLFNBQVMsT0FBTztBQUFBLEVBQ3pCOyIsCiAgIm5hbWVzIjogW10KfQo=

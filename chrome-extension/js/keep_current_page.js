@@ -5,13 +5,11 @@ if you want to view the source, please visit the github repository of this exten
 
 (() => {
   // src/entry-points/keep_current_page.ts
-  {
-    const match = document.cookie.match(/chapterId=(\d+)/);
-    if (match) {
-      const chapterId = match[1];
-      const button = document.querySelector(`div#chapter_${chapterId}`);
-      button.click();
-    }
+  var match = document.cookie.match(/chapterId=(\d+)/);
+  if (match) {
+    const chapterId = match[1];
+    const button = document.querySelector(`div#chapter_${chapterId}`);
+    button.click();
   }
 })();
-//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vc3JjL2VudHJ5LXBvaW50cy9rZWVwX2N1cnJlbnRfcGFnZS50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsie1xyXG4gIGNvbnN0IG1hdGNoID0gZG9jdW1lbnQuY29va2llLm1hdGNoKC9jaGFwdGVySWQ9KFxcZCspLyk7XHJcbiAgaWYobWF0Y2gpIHtcclxuICAgIGNvbnN0IGNoYXB0ZXJJZCA9IG1hdGNoWzFdO1xyXG4gICAgY29uc3QgYnV0dG9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihgZGl2I2NoYXB0ZXJfJHtjaGFwdGVySWR9YCk7XHJcbiAgICBidXR0b24uY2xpY2soKTtcclxuICB9XHJcbn0iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7O0FBQUE7QUFDRSxVQUFNLFFBQVEsU0FBUyxPQUFPLE1BQU0saUJBQWlCO0FBQ3JELFFBQUcsT0FBTztBQUNSLFlBQU0sWUFBWSxNQUFNLENBQUM7QUFDekIsWUFBTSxTQUFTLFNBQVMsY0FBYyxlQUFlLFNBQVMsRUFBRTtBQUNoRSxhQUFPLE1BQU07QUFBQSxJQUNmO0FBQUEsRUFDRjsiLAogICJuYW1lcyI6IFtdCn0K
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vc3JjL2VudHJ5LXBvaW50cy9rZWVwX2N1cnJlbnRfcGFnZS50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiY29uc3QgbWF0Y2ggPSBkb2N1bWVudC5jb29raWUubWF0Y2goL2NoYXB0ZXJJZD0oXFxkKykvKTtcbmlmIChtYXRjaCkge1xuICBjb25zdCBjaGFwdGVySWQgPSBtYXRjaFsxXTtcbiAgY29uc3QgYnV0dG9uID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcjxIVE1MRGl2RWxlbWVudD4oYGRpdiNjaGFwdGVyXyR7Y2hhcHRlcklkfWApITtcbiAgYnV0dG9uLmNsaWNrKCk7XG59XG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7O0FBQUEsTUFBTSxRQUFRLFNBQVMsT0FBTyxNQUFNLGlCQUFpQjtBQUNyRCxNQUFJLE9BQU87QUFDVCxVQUFNLFlBQVksTUFBTSxDQUFDO0FBQ3pCLFVBQU0sU0FBUyxTQUFTLGNBQThCLGVBQWUsU0FBUyxFQUFFO0FBQ2hGLFdBQU8sTUFBTTtBQUFBLEVBQ2Y7IiwKICAibmFtZXMiOiBbXQp9Cg==

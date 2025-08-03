@@ -17,10 +17,10 @@ const buildOptions: BuildOptions = {
   bundle: true,
   target: 'esnext',
   platform: 'browser',
-  minify: prod,
-  // minify: false,
+  minify: false, // prod,
   // minifyWhitespace: true,
-  sourcemap: prod ? false : 'inline',
+  // sourcemap: prod ? false : 'inline',
+  sourcemap: 'inline',
   outdir: './chrome-extension/js',
 };
 
