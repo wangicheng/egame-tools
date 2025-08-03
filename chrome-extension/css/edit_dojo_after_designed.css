@@ -1,0 +1,3 @@
+div[data-bind='visible:!myDojo.isOpen(),click:edit'] {
+  display: block !important;
+}
