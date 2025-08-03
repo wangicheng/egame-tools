@@ -6,7 +6,7 @@ const observer = new MutationObserver(function (mutationList, observer) {
   if (playButton && !document.querySelector('#clone-play-button')) {
     // observer.disconnect();
     const parent = playButton.parentElement!;
-    const cloneButton = playButton.cloneNode(true) as HTMLParagraphElement;
+    const cloneButton = playButton.cloneNode(true) as HTMLButtonElement;
     cloneButton.id = 'clone-play-button';
     cloneButton.querySelector('p')!.textContent = '免費闖關';
     cloneButton.addEventListener('click', () => {
