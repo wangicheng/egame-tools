@@ -1,80 +1,144 @@
 {
-    "manifest_version": 3,
-    "name": "Egame Tools",
-    "description": "Egame Tools",
-    "version": "1.3.1",
-    "permissions": [
-      "activeTab",
-      "storage",
-      "clipboardRead"
-    ],
-    "content_scripts": [
-      {
-        "matches": ["https://*.egame.kh.edu.tw/auth/main/"],
-        "js": ["js/free_dojo.js", "js/skip_checkin.js"],
-        "run_at": "document_start"
-      },
-      {
-        "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/", "https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"],
-        "include_globs": ["*play"],
-        "js": ["js/show_pixel_errors.js"],
-        "run_at": "document_start",
-        "world": "MAIN"
-      },
-      {
-        "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/", "https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"],
-        "include_globs": ["*play", "*edit"],
-        "js": ["js/remove_duck_statue.js", "js/turtle_speedup.js", "js/copy_paste_blocks_xml.js"],
-        "css": ["css/dotcode_gaming.css"],
-        "run_at": "document_start",
-        "world": "MAIN"
-      },
-      {
-        "matches": ["https://*.egame.kh.edu.tw/auth/main/"],
-        "js": ["js/edit_dojo_after_designed.js"],
-        "run_at": "document_start"
-      },
-      {
-        "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"],
-        "js": ["js/show_solution_button.js"],
-        "run_at": "document_start",
-        "world": "MAIN"
-      },
-      {
-        "matches": ["https://*.egame.kh.edu.tw/auth/dotCodeIsland?Duck"],
-        "js": ["js/keep_current_page.js"],
-        "css": ["css/hide_all_pass.css"],
-        "run_at": "document_idle"
-      },
-      {
-        "matches": ["https://www.egame.kh.edu.tw/register*"],
-        "js": ["js/fast_register.js"],
-        "run_at": "document_idle",
-        "world": "MAIN"
-      },
-      {
-        "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/"],
-        "include_globs": ["*play", "*edit"],
-        "js": ["js/dojo_canvas_background.js"],
-        "css": ["css/dojo_canvas_background.css", "css/dotcode_gaming.css"]
-      },
-      {
-        "matches": ["https://*.egame.kh.edu.tw/auth/main/"],
-        "css": ["css/remove_eye_30.css"]
-      },
-      {
-        "matches": ["https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/"],
-        "include_globs": ["*edit"],
-        "js": ["js/custom_hint.js"],
-        "css": ["css/custom_hint.css"],
-        "world": "MAIN"
-      }
-    ],
-    "icons": {
-      "16": "img/icon.png",
-      "32": "img/icon.png",
-      "48": "img/icon.png",
-      "128": "img/icon.png"
+  "$schema": "https://json.schemastore.org/chrome-manifest",
+  "manifest_version": 3,
+  "name": "Egame Tools",
+  "description": "Egame Tools",
+  "version": "1.3.1",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "clipboardRead"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.egame.kh.edu.tw/auth/main/"
+      ],
+      "js": [
+        "js/free_dojo.js",
+        "js/skip_checkin.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/",
+        "https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"
+      ],
+      "include_globs": [
+        "*play"
+      ],
+      "js": [
+        "js/show_pixel_errors.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/",
+        "https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"
+      ],
+      "include_globs": [
+        "*play",
+        "*edit"
+      ],
+      "js": [
+        "js/remove_duck_statue.js",
+        "js/turtle_speedup.js",
+        "js/copy_paste_blocks_xml.js"
+      ],
+      "css": [
+        "css/dotcode_gaming.css"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://*.egame.kh.edu.tw/auth/main/"
+      ],
+      "css": [
+        "css/edit_dojo_after_designed.css"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://*.egame.kh.edu.tw/auth/dotCode/apps/duck/play"
+      ],
+      "css": [
+        "css/show_solution_button.css"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://*.egame.kh.edu.tw/auth/dotCodeIsland?Duck"
+      ],
+      "js": [
+        "js/keep_current_page.js"
+      ],
+      "css": [
+        "css/hide_all_pass.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.egame.kh.edu.tw/register*"
+      ],
+      "js": [
+        "js/fast_register.js"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/"
+      ],
+      "include_globs": [
+        "*play",
+        "*edit"
+      ],
+      "js": [
+        "js/dojo_canvas_background.js"
+      ],
+      "css": [
+        "css/dojo_canvas_background.css",
+        "css/dotcode_gaming.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://*.egame.kh.edu.tw/auth/main/"
+      ],
+      "css": [
+        "css/remove_eye_30.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://*.egame.kh.edu.tw/auth/dotCode/apps/dojo/"
+      ],
+      "include_globs": [
+        "*edit"
+      ],
+      "js": [
+        "js/custom_hint.js"
+      ],
+      "css": [
+        "css/custom_hint.css"
+      ],
+      "world": "MAIN"
     }
+  ],
+  "icons": {
+    "16": "img/icon.png",
+    "32": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
   }
-  
+}
