@@ -71,12 +71,14 @@
     });
 
     // --- 從 makerAnswer 中試圖獲取先前自訂的提示內容 ---
-    const regex = /}\)\("([^"]*)"\);?/m;
-    const match = dojoInfo.makerAnswer.match(regex);
-    if (match && match[1]) {
-      hintText = decodeBase64(match[1]);
-    } else {
-      hintText = '';
+    if (dojoInfo.makerAnswer) {
+      const regex = /}\)\("([^"]*)"\);?/m;
+      const match = dojoInfo.makerAnswer.match(regex);
+      if (match && match[1]) {
+        hintText = decodeBase64(match[1]);
+      } else {
+        hintText = '';
+      }
     }
   }
 
