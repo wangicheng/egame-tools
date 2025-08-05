@@ -15,10 +15,11 @@
         "https://*.egame.kh.edu.tw/auth/main/"
       ],
       "js": [
+        "js/auto_agree.js",
         "js/free_dojo.js",
         "js/skip_checkin.js"
       ],
-      "run_at": "document_start"
+      "run_at": "document_idle"
     },
     {
       "matches": [

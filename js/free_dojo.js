@@ -19,5 +19,5 @@
       playButton.style.display = 'none';
     }
   });
-  observer.observe(document.documentElement, { attributes: false, childList: true, subtree: true });
+  observer.observe(document.body, { attributes: false, childList: true, subtree: true });
 }
