@@ -59,10 +59,13 @@
       "matches": [
         "https://*.egame.kh.edu.tw/auth/main/"
       ],
-      "css": [
-        "css/edit_dojo_after_designed.css"
+      "js": [
+        "js/open_all_box_level.js"
       ],
-      "run_at": "document_start"
+      "css": [
+        "css/open_all_box_level.css"
+      ],
+      "run_at": "document_idle"
     },
     {
       "matches": [
