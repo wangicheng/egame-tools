@@ -12,6 +12,16 @@
   "content_scripts": [
     {
       "matches": [
+        "https://*.egame.kh.edu.tw/auth/dotCodeIsland?Duck"
+      ],
+      "js": [
+        "js/open_all_stage.js"
+      ],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
         "https://*.egame.kh.edu.tw/auth/main/"
       ],
       "js": [
