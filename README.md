@@ -6,20 +6,20 @@ Egame Tools 是一個 Chrome Extension，提供多種功能來提升您的遊戲
 
 - [介紹](#介紹)
 - [功能](#功能)
-  - [copy_paste_blocks_xml.js](#copy_paste_blocks_xmljs)
-  - [custom_hint.js](#custom_hintjs)
-  - [dojo_canvas_background.js](#dojo_canvas_backgroundjs)
-  - [edit_dojo_after_designed.js](#edit_dojo_after_designedjs)
-  - [fast_register.js](#fast_registerjs)
-  - [free_dojo.js](#free_dojojs)
-  - [hide_all_pass.css](#hide_all_passcss)
-  - [keep_current_page.js](#keep_current_pagejs)
-  - [remove_duck_statue.js](#remove_duck_statuejs)
-  - [remove_eye_30.css](#remove_eye_30css)
-  - [show_pixel_errors.js](#show_pixel_errorsjs)
-  - [show_solution_button.js](#show_solution_buttonjs)
-  - [skip_checkin.js](#skip_checkinjs)
-  - [turtle_speedup.js](#turtle_speedupjs)
+  - [copy_paste_blocks_xml](#copy_paste_blocks_xml)
+  - [custom_hint](#custom_hint)
+  - [dojo_canvas_background](#dojo_canvas_background)
+  - [edit_dojo_after_designed](#edit_dojo_after_designed)
+  - [fast_register](#fast_register)
+  - [free_dojo](#free_dojo)
+  - [hide_all_pass](#hide_all_pass)
+  - [keep_current_page](#keep_current_page)
+  - [remove_duck_statue](#remove_duck_statue)
+  - [remove_eye_30](#remove_eye_30)
+  - [show_pixel_errors](#show_pixel_errors)
+  - [show_solution_button](#show_solution_button)
+  - [skip_checkin](#skip_checkin)
+  - [turtle_speedup](#turtle_speedup)
 - [安裝](#安裝)
 - [使用方法](#使用方法)
 - [貢獻](#貢獻)
@@ -32,7 +32,7 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 
 ## 功能
 
-### copy_paste_blocks_xml.js
+### copy_paste_blocks_xml
 
 提供複製和貼上積木的功能。
 
@@ -42,7 +42,7 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 
 ![image](https://github.com/user-attachments/assets/0990766c-98e1-4953-a336-913701bd6b19)
 
-### custom_hint.js
+### custom_hint
 
 允許自訂個人武館中的提示文字。
 
@@ -59,7 +59,7 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 > [!TIP]
 > 將自訂提示留空，即可保留 egame 內部生成的提示。
 
-### dojo_canvas_background.js
+### dojo_canvas_background
 
 在武館中加入純色背景及黑色邊框，讓畫布更乾淨，其大小更能被辨識。
 
@@ -71,13 +71,13 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 
 ![image](https://github.com/user-attachments/assets/56c24853-141c-4eff-ad1f-62e30f95b19f)
 
-### edit_dojo_after_designed.js
+### edit_dojo_after_designed
 
 允許編輯已上架的武館。
 
 ![image](https://github.com/user-attachments/assets/53a18b34-7017-463d-9c9b-f4dfeab45b19)
 
-### fast_register.js
+### fast_register
 
 註冊新帳號時，點擊按鈕以自動填入隨機的帳號密碼及其他必要資訊，達到瞬間註冊的效果。
 
@@ -86,25 +86,25 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 > [!NOTE]
 > 此功能註冊的帳號為「民眾」身分。
 
-### free_dojo.js
+### free_dojo
 
 允許不消耗體力進出別人的武館。
 
 ![image](https://github.com/user-attachments/assets/d3d24b43-82dc-430c-a245-63d61e35016c)
 
-### hide_all_pass.css
+### hide_all_pass
 
 隱藏令人煩躁的吹牛圖片。
 
 ![image](https://github.com/user-attachments/assets/db0e1327-ab2e-436b-8ca0-cdf898444b5b)
 
-### keep_current_page.js
+### keep_current_page
 
 返回關卡選單時，自動切換到上次的頁數，而不是每次都跳到最後一頁。
 
 ![image](https://github.com/user-attachments/assets/5729dc8e-cf49-4874-b270-b34162c76687)
 
-### remove_duck_statue.js
+### remove_duck_statue
 
 以紅點取代阻擋視野的角色圖片。
 
@@ -113,13 +113,13 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 > [!TIP]
 > 您同樣可以原來的方式將紅點隱藏。
 
-### remove_eye_30.css
+### remove_eye_30
 
 隱藏每次進入大廳都會出現的規律用眼提示。
 
 ![image](https://github.com/user-attachments/assets/8e203095-6d24-4f6e-8b66-85284cfc8a6c)
 
-### show_pixel_errors.js
+### show_pixel_errors
 
 顯示繪製圖形與正確圖形的差距。
 
@@ -131,7 +131,7 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 > [!NOTE]
 > pixelErrors 必須小於 permittedErrors 才能通關，一般關卡為 25，武館關卡為 30。
 
-### show_solution_button.js
+### show_solution_button
 
 將一般關卡中顯示解答的按鈕顯示出來。
 
@@ -140,13 +140,13 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 > [!NOTE]
 > 此功能原為 Egame 內建功能，後來遭到移除，因此 8-5 以後的關卡沒有官方解答。
 
-### skip_checkin.js
+### skip_checkin
 
 跳過漫長的簽到動畫。
 
 ![image](https://github.com/user-attachments/assets/0835f4f1-df89-4db9-a579-fc1c16822a47)
 
-### turtle_speedup.js
+### turtle_speedup
 
 在執行按鈕左側新增「加速」按鈕，讓烏龜以極快的速度完成動作。
 
@@ -162,11 +162,6 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 要安裝 Egame Tools Chrome Extension，請按照以下步驟操作：
 
 1. 下載並解壓縮此倉庫：
-
-   ```sh
-   git clone https://github.com/wangicheng/egame-tools.git
-   ```
-
 2. 打開 Chrome 瀏覽器，進入擴充功能管理頁面：
 
    ```sh
