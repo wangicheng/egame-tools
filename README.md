@@ -6,14 +6,16 @@ Egame Tools 是一個 Chrome Extension，提供多種功能來提升您的遊戲
 
 - [介紹](#介紹)
 - [功能](#功能)
+  - [auto_agree](#auto_agree)
   - [copy_paste_blocks_xml](#copy_paste_blocks_xml)
   - [custom_hint](#custom_hint)
   - [dojo_canvas_background](#dojo_canvas_background)
-  - [edit_dojo_after_designed](#edit_dojo_after_designed)
   - [fast_register](#fast_register)
   - [free_dojo](#free_dojo)
   - [hide_all_pass](#hide_all_pass)
   - [keep_current_page](#keep_current_page)
+  - [open_all_box_level](#open_all_box_level)
+  - [open_all_stage](#open_all_stage)
   - [remove_duck_statue](#remove_duck_statue)
   - [remove_eye_30](#remove_eye_30)
   - [show_pixel_errors](#show_pixel_errors)
@@ -31,6 +33,12 @@ Egame Tools 是一個 Chrome Extension，提供多種功能來提升您的遊戲
 Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲體驗。
 
 ## 功能
+
+### auto_agree
+
+創建武館時，自動同意遵守江湖令。
+
+![image](https://github.com/user-attachments/assets/20412022-03b3-4351-a571-37423ea2ba71)
 
 ### copy_paste_blocks_xml
 
@@ -71,12 +79,6 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 
 ![image](https://github.com/user-attachments/assets/56c24853-141c-4eff-ad1f-62e30f95b19f)
 
-### edit_dojo_after_designed
-
-允許編輯已上架的武館。
-
-![image](https://github.com/user-attachments/assets/53a18b34-7017-463d-9c9b-f4dfeab45b19)
-
 ### fast_register
 
 註冊新帳號時，點擊按鈕以自動填入隨機的帳號密碼及其他必要資訊，達到瞬間註冊的效果。
@@ -103,6 +105,27 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 返回關卡選單時，自動切換到上次的頁數，而不是每次都跳到最後一頁。
 
 ![image](https://github.com/user-attachments/assets/5729dc8e-cf49-4874-b270-b34162c76687)
+
+### open_all_box_level
+
+設計武館時，開放所有類型的積木包。
+
+- 選擇積木包類型：
+
+![image](https://github.com/user-attachments/assets/1737a5e2-7d12-4dbf-aea9-6fe11f4fd5a1)
+
+- 編輯武館：
+
+![image](https://github.com/user-attachments/assets/53a18b34-7017-463d-9c9b-f4dfeab45b19)
+
+> [!TIP]
+> 武館上架後，您仍然可以更改積木包的類型和編輯武館。
+
+### open_all_stage
+
+允許使用者遊玩打寇島中的所有關卡。
+
+![image](https://github.com/user-attachments/assets/49a78089-4e2a-41f0-8e37-a4bd94fa0c9c)
 
 ### remove_duck_statue
 
