@@ -15,6 +15,7 @@
   let editorContainer;
   let editorTextarea;
   let toggleButton; // 新增的開關按鈕
+  let markdownCheckbox; // 新增 Markdown 核取方塊
 
   function initializeEditorAndButton() {
     // --- 創建編輯器容器 ---
@@ -26,6 +27,22 @@
     editorTextarea.id = 'editorTextarea';
     editorTextarea.placeholder = '自訂提示...';
     editorContainer.appendChild(editorTextarea);
+
+    // --- 創建 Markdown 開關 ---
+    const markdownControlContainer = document.createElement('div');
+    markdownControlContainer.id = 'markdownControl';
+    markdownCheckbox = document.createElement('input');
+    markdownCheckbox.type = 'checkbox';
+    markdownCheckbox.id = 'markdownCheckbox';
+    markdownCheckbox.checked = false; // 預設禁用
+
+    const markdownLabel = document.createElement('label');
+    markdownLabel.htmlFor = 'markdownCheckbox';
+    markdownLabel.textContent = '啟用 MarkDown';
+
+    markdownControlContainer.appendChild(markdownCheckbox);
+    markdownControlContainer.appendChild(markdownLabel);
+    editorContainer.appendChild(markdownControlContainer);
 
     const cancelBtn = document.createElement('button');
     cancelBtn.id = 'cancelBtn';
@@ -121,16 +138,19 @@
     const submitFunction = saveForm.submit;
     saveForm.submit = function() {
       const makerAnswer = document.querySelector('#makerAnswer');
+      const convertToMarkDown = markdownCheckbox.checked; // 改為由使用者控制
       if(hintText) {
         makerAnswer.value += `
 // custom hint
 containerHint.innerHTML = "";
-containerHint.innerText = ((encodedStr) => {
+const hintText = ((encodedStr) => {
   const decoded = atob(encodedStr);
   const charCodeArray = decoded.split('').map(char => char.charCodeAt(0));
   const utf8Decoded = new Uint8Array(charCodeArray);
   return new TextDecoder().decode(utf8Decoded);
 })("${encodeBase64(hintText)}");
+if(${convertToMarkDown}) (function(n){return fetch("ht"+"tps://api.github.com/markdown",{method:"PO"+"ST",headers:{Accept:"application/vnd.github.v3+json","Content-Type":"application/json"},body:JSON.stringify({text:n,mode:"gfm"})}).then(t=>t.ok?t.text():n,t=>t)})(hintText).then(t=>{const n=containerHint.attachShadow({mode:"open"});n.innerHTML=t});
+else containerHint.innerText = hintText;
         `;
       }
       submitFunction.apply(this);

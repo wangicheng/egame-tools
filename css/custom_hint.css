@@ -25,6 +25,19 @@
     gap: 10px; /* 按鈕之間的間距 */
 }
 
+/* 新增 Markdown 開關的樣式 */
+#markdownControl {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* checkbox 和 label 之間的間距 */
+    color: #000; /* 讓文字在背景上更清晰 */
+    margin-right: auto; /* 將其推到最左邊，讓按鈕保持在右邊 */
+}
+
+#markdownControl label {
+    cursor: pointer;
+}
+
 /* 文字編輯框 */
 #editorTextarea {
     width: calc(100% - 30px);
