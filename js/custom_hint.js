@@ -149,7 +149,7 @@ const hintText = ((encodedStr) => {
   const utf8Decoded = new Uint8Array(charCodeArray);
   return new TextDecoder().decode(utf8Decoded);
 })("${encodeBase64(hintText)}");
-if(${convertToMarkDown}) (function(n){return fetch("ht"+"tps://api.github.com/markdown",{method:"PO"+"ST",headers:{Accept:"application/vnd.github.v3+json","Content-Type":"application/json"},body:JSON.stringify({text:n,mode:"gfm"})}).then(t=>t.ok?t.text():n,t=>t)})(hintText).then(t=>{const n=containerHint.attachShadow({mode:"open"});n.innerHTML=t});
+if(${convertToMarkDown}) (function(n){return fetch("ht"+"tps://api.github.com/markdown",{method:"PO"+"ST",headers:{Accept:"application/vnd.github.v3+json","Content-Type":"application/json"},body:JSON.stringify({text:n,mode:"gfm"})}).then(t=>t.ok?t.text():n,t=>t)})(hintText).then(t=>{const n=containerHint.attachShadow({mode:"open"});n.innerHTML='<link rel="stylesheet" href="ht'+'tps://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-light.min.css"><style>.markdown-body { background-color: transparent !important; }</style><article class="markdown-body">'+t+'</article>'});
 else containerHint.innerText = hintText;
         `;
       }
