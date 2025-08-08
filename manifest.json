@@ -3,7 +3,7 @@
   "manifest_version": 3,
   "name": "Egame Tools",
   "description": "Egame Tools",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "permissions": [
     "activeTab",
     "storage",
