@@ -58,11 +58,11 @@ Egame Tools 是一個 Chrome Extension，提供多種工具來提升您的遊戲
 
   ![image](https://github.com/user-attachments/assets/242bf59f-abd7-413e-818e-2cee647f1330)
 
-  ![image](https://github.com/user-attachments/assets/01e544a3-9183-4a82-ac3c-86bc391c92f9)
+  ![image](https://github.com/user-attachments/assets/fd0321ec-b2c7-496a-a764-04514676ff27)
 
 - 遊玩畫面：
 
-  ![image](https://github.com/user-attachments/assets/8b0ed884-ac01-4c6d-84e4-76bdd0957002)
+  ![image](https://github.com/user-attachments/assets/fd02a1bd-f379-4cfa-a1b9-e4b39d9fb690)
 
 > [!TIP]
 > 將自訂提示留空，即可保留 egame 內部生成的提示。
