@@ -1,14 +1,7 @@
 {
-  function encodeBase64(str) {
-    const utf8Encoded = new TextEncoder().encode(str);
-    return btoa(String.fromCharCode.apply(null, utf8Encoded));
-  }
-  
-  function decodeBase64(encodedStr) {
-    const decoded = atob(encodedStr);
-    const charCodeArray = decoded.split('').map(char => char.charCodeAt(0));
-    const utf8Decoded = new Uint8Array(charCodeArray);
-    return new TextDecoder().decode(utf8Decoded);
+  function encode(x) {
+    const a = new TextEncoder().encode(x);
+    return Array.from(a).map(b=>'%' + b.toString(16).toUpperCase().padStart(2, '0')).join('');
   }
 
   let hintText = '';
@@ -89,10 +82,14 @@
 
     // --- 從 makerAnswer 中試圖獲取先前自訂的提示內容 ---
     if (dojoInfo.makerAnswer) {
-      const regex = /}\)\("([^"]*)"\);?/m;
+      const regex = /const hintText = (.*);/m;
       const match = dojoInfo.makerAnswer.match(regex);
       if (match && match[1]) {
-        hintText = decodeBase64(match[1]);
+        try {
+          hintText = JSON.parse(match[1]);
+        } catch (e) {
+          hintText = '';
+        }
       } else {
         hintText = '';
       }
@@ -136,22 +133,40 @@
     observer2.disconnect();
 
     const submitFunction = saveForm.submit;
-    saveForm.submit = function() {
+    saveForm.submit = async function() {
       const makerAnswer = document.querySelector('#makerAnswer');
       const convertToMarkDown = markdownCheckbox.checked; // 改為由使用者控制
       if(hintText) {
-        makerAnswer.value += `
-// custom hint
+        let finalHintText = hintText;
+        if (convertToMarkDown) {
+          try {
+            const response = await fetch("https://api.github.com/markdown", {
+              method: "POST",
+              headers: {
+                Accept: "application/vnd.github.v3+json",
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ text: hintText, mode: "gfm" })
+            });
+            if (response.ok) {
+              finalHintText = await response.text();
+            }
+          } catch (error) {
+            console.error("Markdown conversion failed", error);
+          }
+        }
+
+        const code = `
 containerHint.innerHTML = "";
-const hintText = ((encodedStr) => {
-  const decoded = atob(encodedStr);
-  const charCodeArray = decoded.split('').map(char => char.charCodeAt(0));
-  const utf8Decoded = new Uint8Array(charCodeArray);
-  return new TextDecoder().decode(utf8Decoded);
-})("${encodeBase64(hintText)}");
-if(${convertToMarkDown}) (function(n){return fetch("ht"+"tps://api.github.com/markdown",{method:"PO"+"ST",headers:{Accept:"application/vnd.github.v3+json","Content-Type":"application/json"},body:JSON.stringify({text:n,mode:"gfm"})}).then(t=>t.ok?t.text():n,t=>t)})(hintText).then(t=>{const n=containerHint.attachShadow({mode:"open"});n.innerHTML='<link rel="stylesheet" href="ht'+'tps://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-light.min.css"><style>.markdown-body { background-color: transparent !important; }</style><article class="markdown-body">'+t+'</article>'});
-else containerHint.innerText = hintText;
-        `;
+const finalHintText = ${JSON.stringify(finalHintText)};
+if(${convertToMarkDown}) {
+  const n = containerHint.attachShadow({mode:"open"});
+  n.innerHTML='<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-light.min.css"><style>.markdown-body { background-color: transparent !important; }</style><article class="markdown-body">'+finalHintText+'</article>';
+} else {
+  containerHint.innerText = finalHintText;
+}`;
+
+        makerAnswer.value += `\nnew/**/Function/**/(decodeURIComponent("${encode(code)}"))();`;
       }
       submitFunction.apply(this);
     }
