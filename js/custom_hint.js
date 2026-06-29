@@ -80,18 +80,24 @@
       showEditor();
     });
 
-    // --- 從 makerAnswer 中試圖獲取先前自訂的提示內容 ---
-    if (dojoInfo.makerAnswer) {
-      const regex = /const hintText = (.*);/m;
-      const match = dojoInfo.makerAnswer.match(regex);
-      if (match && match[1]) {
+    // --- 從 Turtle.level.json.makerAnswer 中試圖獲取先前自訂的提示內容 ---
+    if (typeof Turtle !== 'undefined' && Turtle.level && Turtle.level.json && Turtle.level.json.makerAnswer) {
+      const makerAnswerContent = Turtle.level.json.makerAnswer;
+      const regex = /new\/\*\*\/Function\/\*\*\/\(decodeURIComponent\("([^"]+)"\)\)\(\);/g;
+      let match;
+      while ((match = regex.exec(makerAnswerContent)) !== null) {
         try {
-          hintText = JSON.parse(match[1]);
-        } catch (e) {
-          hintText = '';
+          const decodedCode = decodeURIComponent(match[1]);
+          // 讀取 __CUSTOM_HINT_DATA__ 格式的提示內容
+          const dataMatch = decodedCode.match(/\/\/ __CUSTOM_HINT_DATA__=(.*)/);
+          if (dataMatch) {
+            const data = JSON.parse(dataMatch[1]);
+            hintText = data.hintText;
+            markdownCheckbox.checked = data.convertToMarkDown;
+          }
+        } catch(e) {
+          console.error(e);
         }
-      } else {
-        hintText = '';
       }
     }
   }
@@ -156,7 +162,9 @@
           }
         }
 
+        const hintData = JSON.stringify({ hintText, convertToMarkDown });
         const code = `
+// __CUSTOM_HINT_DATA__=${hintData}
 containerHint.innerHTML = "";
 const finalHintText = ${JSON.stringify(finalHintText)};
 if(${convertToMarkDown}) {
